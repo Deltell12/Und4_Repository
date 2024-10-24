@@ -11,7 +11,7 @@ public class Ejercicio8 {
         double rad= entrada.nextDouble();
         System.out.print("Ingrese el altura del cono: ");
         double alt= entrada.nextDouble();
-        double V= 1/3*Math.PI*Math.pow(rad,2)*alt;
-        System.out.println("El volumen del cono es: "+V);
+        double V= (double)1/3*Math.PI*Math.pow(rad,2)*alt;
+        System.out.println("El volumen del cono es: "+(double)V);
     }
 }
