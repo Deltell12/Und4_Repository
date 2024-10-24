@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Ejercicio11 {
     public static void main(String[] args) {
-        String rad;
         Scanner entrada = new Scanner(System.in);
         System.out.print("Ingrese el radio: ");
         double radio = entrada.nextDouble();
