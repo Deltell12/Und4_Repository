@@ -7,6 +7,5 @@ public class Und5_Ejercicio17 {
         Scanner entrada = new Scanner(System.in);
         System.out.print("Ingresa una hora expresada en horas, minutos y segundos (HH:MM:SS): ");
         int hora = entrada.nextInt();
-        if
     }
 }

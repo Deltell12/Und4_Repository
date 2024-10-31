@@ -11,29 +11,29 @@ public class Und5_Ejercicio20 {
         int horas = entrada.nextInt();
         System.out.print("Ingrese su tarifa por hora: ");
         int tarifa = entrada.nextInt();
-        if (horas<=35){
-            int bruto= tarifa*horas;
-
-        if (horas>35){
-            float bruto2 = (float) ((float) (horas - 35) * (tarifa * 1.5)+bruto;
-
-        if (bruto>=500||bruto2>=500){
-            bruto=bruto;
-            bruto2=bruto2;
-
-        if  (bruto<=900||bruto2<=900) {
-                float imp = (float) ((bruto - 400) * 0.25);
-                float neto = bruto - imp;
-                float imp2 = (float) ((bruto2 - 400) * 0.25);
-                float neto2 = bruto2 - imp2;
-
-        if (bruto>900||bruto2>900){
-            float imp3= (float) ((bruto-900)*0.45);
-            float neto3= (bruto-imp3)+neto;
-            float imp4= (float) ((bruto2-900)*0.24);
-            float neto4= (bruto2-imp4)+neto2;
+        double bruto=0;
+        double neto=0;
+        double imp;
+        if (horas <= 35) {
+            bruto= tarifa * horas;
         }
-            System.out.println("Por las "+horas+" horas trabajadas, a"+nombre+);
-            }
+        else if (horas > 35) {
+            bruto = (float) ((horas - 35) * (tarifa * 1.5)+tarifa*horas);
+        }
+        if (bruto<=500){
+            neto=bruto;
+            System.out.println("Por las "+horas+" horas trabajadas,a "+nombre+" le corresponde un salario bruto de "+bruto+" y un neto de "+neto+" tras aplicar 0€ de impuestos.");
+        }
+        else if (bruto<=900) {
+            imp= (bruto-500)*0.25;
+            neto=bruto-imp;
+            System.out.println("Por las "+horas+" horas trabajadas,a "+nombre+" le corresponde un salario bruto de "+bruto+" y un neto de "+neto+" tras aplicar "+imp+"€ de impuestos.");
+        }
+        else if (bruto>900){
+            imp= (bruto-900)*0.45;
+            neto=bruto-imp;
+            System.out.println("Por las "+horas+" horas trabajadas,a "+nombre+" le corresponde un salario bruto de "+bruto+" y un neto de "+neto+" tras aplicar "+imp+"€ de impuestos.");
+        }
     }
 }
+
