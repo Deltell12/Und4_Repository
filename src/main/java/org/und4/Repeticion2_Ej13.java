@@ -12,12 +12,19 @@ public class Repeticion2_Ej13 {
         System.out.print("Introduce el carácter de relleno: ");
         String caracter = sc.next();
 
-        int relleno= 1;
+        int espacio;
+        int cant=0;
 
-        for (int i = 1; i <= altura; i++) {
-            System.out.print(caracter);
+        for (int i = 1; i <= altura; cant=0, i++) {
+            for (espacio=1; espacio<= altura-i; espacio++) {
+                System.out.print(" ");
+
+            }
+            while (cant!= (2*i-1)){
+                System.out.print(caracter);
+                cant++;
+            }
             System.out.println();
-
         }
     }
 }
