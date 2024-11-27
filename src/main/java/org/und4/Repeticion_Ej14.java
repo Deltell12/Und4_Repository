@@ -9,7 +9,7 @@ public class Repeticion_Ej14 {
         int dinero = sc.nextInt();
         int b500 = 0;
         int b200 = 0;
-        int b100 = 0;
+        int bi100 = 0;
         int b50 = 0;
         int b20 = 0;
         int b10 = 0;
