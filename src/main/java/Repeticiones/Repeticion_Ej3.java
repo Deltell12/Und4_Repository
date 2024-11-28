@@ -1,4 +1,4 @@
-package org.und4;
+package Repeticiones;
 
 public class Repeticion_Ej3 {
     public static void main(String[] args) {

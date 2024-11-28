@@ -1,6 +1,5 @@
-package org.und4;
+package Repeticiones;
 
-import javax.xml.stream.events.EndDocument;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 

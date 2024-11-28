@@ -1,4 +1,4 @@
-package org.und4;
+package Repeticiones;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;

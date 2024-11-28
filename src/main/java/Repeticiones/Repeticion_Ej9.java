@@ -1,6 +1,4 @@
-package org.und4;
-
-import java.util.Scanner;
+package Repeticiones;
 
 public class Repeticion_Ej9 {
     public static void main(String[] args) {

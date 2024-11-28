@@ -1,4 +1,4 @@
-package org.und4;
+package Repeticiones;
 
 import java.util.Scanner;
 
