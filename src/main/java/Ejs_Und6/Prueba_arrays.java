@@ -1,4 +1,4 @@
-package Und6_Pruebas_y_Ejs;
+package Ejs_Und6;
 
 import java.util.Arrays;
 
