@@ -11,6 +11,6 @@ public class Und6B_Ejercicio4 {
         frase = frase.toUpperCase();
 
         char[] vocales= {'a','e','i','o','u'};
-        int[] acum= new int [vocales.length()];
+
     }
 }
