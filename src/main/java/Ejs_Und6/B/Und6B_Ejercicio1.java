@@ -1,4 +1,4 @@
-package Ejs_Und6;
+package Ejs_Und6.B;
 
 import java.util.Scanner;
 

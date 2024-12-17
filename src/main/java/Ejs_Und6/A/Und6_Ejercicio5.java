@@ -1,4 +1,4 @@
-package Ejs_Und6;
+package Ejs_Und6.A;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
