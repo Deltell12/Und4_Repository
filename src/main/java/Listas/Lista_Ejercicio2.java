@@ -16,6 +16,6 @@ public class Lista_Ejercicio2 {
         }
         System.out.println("Lista original: " + lista);
         Collections.sort(lista);
-        System.out.println("Lista ordenada de menor a mayor : " + lista);
+        System.out.println("Lista ordenada de menor a mayor: " + lista);
     }
 }

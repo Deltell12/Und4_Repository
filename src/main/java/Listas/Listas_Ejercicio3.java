@@ -25,11 +25,11 @@ public class Listas_Ejercicio3 {
 
         int media= total/lista.size();
 
-        System.out.println("Lista generada : "+lista);
-        System.out.println("La suma total es : "+total);
-        System.out.println("La media es : "+media);
-        System.out.println("El mínimo es : "+Collections.min(lista));
-        System.out.println("El máximo es : "+Collections.max(lista));
+        System.out.println("Lista generada: "+lista);
+        System.out.println("La suma total es: "+total);
+        System.out.println("La media es: "+media);
+        System.out.println("El mínimo es: "+Collections.min(lista));
+        System.out.println("El máximo es: "+Collections.max(lista));
 
     }
 }
