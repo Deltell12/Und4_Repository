@@ -2,34 +2,20 @@ package Listas;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
+import java.util.Scanner;
 
 public class Listas_Ejercicio3 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
         ArrayList<Integer> lista = new ArrayList<Integer>();
 
-        int total=0;
-
-        int longi= 10+(int) (Math.random() * 11);
-
-        for (int i =1; i < longi; i++) {
-            lista.add((int) (Math.random()*100));
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Introduce un número para la lista: ");
+            lista.add(sc.nextInt());
         }
-
-        Iterator<Integer> iterador = lista.iterator();
-
-        while (iterador.hasNext()) {
-            total += iterador.next();
-        }
-
-        int media= total/lista.size();
-
-        System.out.println("Lista generada: "+lista);
-        System.out.println("La suma total es: "+total);
-        System.out.println("La media es: "+media);
-        System.out.println("El mínimo es: "+Collections.min(lista));
-        System.out.println("El máximo es: "+Collections.max(lista));
-
+        System.out.println("Lista original: " + lista);
+        Collections.sort(lista);
+        System.out.println("Lista ordenada de menor a mayor: " + lista);
     }
 }
