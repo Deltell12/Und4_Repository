@@ -20,7 +20,7 @@ public class Listas_Ejercicio1 {
         Iterator<String> it = lista.iterator();
 
         for (Iterator<String> i = lista.iterator(); i.hasNext();) {
-            System.out.println("Compañero " + cont+": "+i.next());
+            System.out.println("Compañero " + cont+" : "+i.next());
             cont++;
         }
     }
