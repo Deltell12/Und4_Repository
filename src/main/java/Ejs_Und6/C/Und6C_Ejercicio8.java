@@ -9,16 +9,18 @@ public class Und6C_Ejercicio8 {
         int alturaMax = 210;
         int[] suma = new int[4];
 
+
         int media = 0,minimo = 0,maximo=0;
 
         int[][] matriz = new int[4][10];
-        String[] paises = {"España", "México", "Brasil", "Italia"};
+        String[] paises = {"España", "Italia", "México", "Zambia"};
+
 
         for (int numeros = 0; numeros < matriz.length; numeros++) {
 
-            if (numeros == 0)
+            if (numeros == 0) {
                 System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t  MED MIN MAX");
-
+            }
             System.out.print(paises[numeros] + ": ");
 
             for (int pais = 0; pais < matriz[0].length; pais++) {
