@@ -1,20 +1,24 @@
 package Conjuntos;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Conjuntos_Ejercicio7 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        ArrayList<String> lista = new ArrayList<String>();
+        HashSet<String> lista = new HashSet<>();
+        Iterator<String> iterador = lista.iterator();
 
         System.out.println("Introduce una frase: ");
-        lista.add(sc.nextLine());
+        String frase = sc.nextLine();
+
+        frase.split(", ");
+        lista.add(frase);
+
+
+
 
         System.out.println(lista);
-
 
     }
 }
