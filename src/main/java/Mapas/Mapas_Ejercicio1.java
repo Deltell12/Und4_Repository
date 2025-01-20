@@ -7,7 +7,7 @@ public class Mapas_Ejercicio1 {
         Scanner sc = new Scanner(System.in);
 
         HashMap<String, Integer>Mapa = new HashMap();
-        String palabra="";
+        String palabra=" ";
         Integer cantidad = 0;
 
 
