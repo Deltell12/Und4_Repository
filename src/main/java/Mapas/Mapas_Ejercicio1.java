@@ -6,19 +6,28 @@ public class Mapas_Ejercicio1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        HashMap<String, Integer>Mapa = new HashMap();
-        String palabra=" ";
-        Integer cantidad = 0;
-
-
         System.out.print("Introduce una cadena: ");
         String frase = sc.nextLine();
 
-        for (int i = 0; i < frase.length(); i++) {
-            Mapa.put(String.valueOf(frase.charAt(i)), cantidad);
+        String[] palabra = frase.split(" ");
+        Map<String, Integer>Mapa = new HashMap();
+
+        Integer cantidad = 0;
+
+
+
+
+        for (String s : palabra) {
+            if (Mapa.containsKey(s)) {
+                cantidad++;
+            }
+            Mapa.put(s, cantidad);
         }
 
-        System.out.println(Mapa);
+        for (Map.Entry<String, Integer> entry : Mapa.entrySet()) {
+            System.out.println(entry.getKey() + "- >" + entry.getValue());
+        }
+
 
 
     }
