@@ -11,6 +11,10 @@ public class Ej13 {
 
         System.out.print("Introduce el precio aplicando el descuento: ");
         double preciocondescuento = sc.nextDouble();
+
+        System.out.println("El porcentaje es de un "+calculoDescuento(preciosindescuento,preciocondescuento)+"%");
     }
-    public static double calculoDescuento(double preciosindescuento, double preciocondescuento) {}
+    public static double calculoDescuento(double preciosindescuento, double preciocondescuento) {
+        return (preciosindescuento * preciocondescuento) / 100;
+    }
 }
