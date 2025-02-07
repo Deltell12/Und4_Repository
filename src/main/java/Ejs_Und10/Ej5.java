@@ -1,5 +1,6 @@
 package Ejs_Und10;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -17,10 +18,11 @@ public class Ej5 {
 
         System.out.println("Array: "+Arrays.toString(array));
 
-        Excepciones(array);
+        System.out.println("El resultado de la division es: "+Excepciones(array));
     }
-    public static void Excepciones (int[] array) {
+    public static double Excepciones (int[] array) {
 
+        double division = 0;
         try{
             Scanner sc=new Scanner(System.in);
             System.out.print("Introduce una posicion: ");
@@ -29,12 +31,13 @@ public class Ej5 {
             System.out.print("Introduce otra posicion: ");
             int posicion2=sc.nextInt();
 
-           double division= (double) array[posicion1] /array[posicion2];
-            System.out.println(posicion1+"/"+posicion2+"= "+division);
+            division= (double) array[posicion1] /array[posicion2];
+
 
         }
         catch(InputMismatchException | ArrayIndexOutOfBoundsException | ArithmeticException e){
-            System.out.println("0");
+            System.out.println("Error");
         }
+        return division;
     }
 }
