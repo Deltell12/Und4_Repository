@@ -20,7 +20,6 @@ public class Main_Personas {
         System.out.println("Introduce la información siguiente: ");
         System.out.print("Nombre: ");
         persona2.nombre = sc.nextLine();
-        persona2.apellido = "Martinez";
         System.out.print("Apellido: ");
         persona2.apellido = sc.nextLine();
         System.out.print("Edad: ");
