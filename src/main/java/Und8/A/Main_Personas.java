@@ -9,8 +9,8 @@ public class Main_Personas {
 
         Scanner sc = new Scanner(System.in);
 
-        Personas.Persona persona1 = new Personas.Persona();
-        Personas.Persona persona2 = new Personas.Persona();
+        Personas persona1 = new Personas();
+        Personas persona2 = new Personas();
 
         persona1.nombre = "Adrián";
         persona1.apellido = "Deltell";
