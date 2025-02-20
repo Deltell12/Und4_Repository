@@ -2,15 +2,15 @@ package Und8.A;
 
 import java.util.Scanner;
 
-public class Main_Personas {
+public class Main_Persona {
 
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        Personas persona1 = new Personas();
-        Personas persona2 = new Personas();
+        Persona persona1 = new Persona();
+        Persona persona2 = new Persona();
 
         persona1.nombre = "Adrián";
         persona1.apellido = "Deltell";

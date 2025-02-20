@@ -1,6 +1,6 @@
 package Und8.A;
 
-public class Personas {
+public class Persona {
         String nombre;
         String apellido;
         int edad;
