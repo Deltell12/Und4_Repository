@@ -1,4 +1,4 @@
-package Und8.A;
+package Und8.B;
 
 import java.text.DecimalFormat;
 import java.util.InputMismatchException;
@@ -10,7 +10,7 @@ public class Main_Articulo {
 
         try {
             Scanner sc = new Scanner(System.in);
-            Articulo articulo1 = new Articulo();
+            Articulo articulo1 = new Articulo("si", 15, 15);
 
             System.out.print("Artículo comprado: ");
             articulo1.nombreArticulo = sc.nextLine();

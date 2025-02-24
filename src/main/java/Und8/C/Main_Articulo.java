@@ -1,4 +1,4 @@
-package Und8.A;
+package Und8.C;
 
 import java.text.DecimalFormat;
 import java.util.InputMismatchException;
@@ -10,15 +10,17 @@ public class Main_Articulo {
 
         try {
             Scanner sc = new Scanner(System.in);
-            Articulo articulo1 = new Articulo();
+            Articulo articulo1 = new Articulo("si", 15, 15);
 
             System.out.print("Artículo comprado: ");
-            articulo1.nombreArticulo = sc.nextLine();
+            String nombreArticulo = sc.nextLine();
+            articulo1.setNombreArticulo(nombreArticulo);
             System.out.print("Precio: ");
-            articulo1.precioSinIVA = sc.nextDouble();
+            double preciosinIVA = sc.nextDouble();
+            articulo1.setPrecioSinIVA(preciosinIVA);;
 
 
-            System.out.println("Artículo: " + articulo1.nombreArticulo + " | Precio:" + df.format(articulo1.precioSinIVA) + "€ | IVA:" + articulo1.IVA + "% | PVP:" + df.format(Articulo.calcularPVP(articulo1.precioSinIVA)) + "€");
+            System.out.println("Artículo: " + articulo1.getNombreArticulo() + " | Precio:" + df.format(articulo1.getPrecioSinIVA()) + "€ | IVA:" + articulo1.getIVA() + "% | PVP:" + df.format(Articulo.calcularPVP(articulo1.getPrecioSinIVA())) + "€");
         }
         catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
