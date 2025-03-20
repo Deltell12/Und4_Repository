@@ -9,6 +9,9 @@ public class Camion extends Vehiculo {
         if (cargaActual > cargaMaxima) {
             throw new IllegalArgumentException("Error, la carga máxima no puede ser excedida");
         }
+        else if (cargaActual <0 ||cargaMaxima<0) {
+            throw new IllegalArgumentException("La carga no puede ser negativo");
+        }
         this.cargaActual = cargaActual;
         this.cargaMaxima = cargaMaxima;
     }

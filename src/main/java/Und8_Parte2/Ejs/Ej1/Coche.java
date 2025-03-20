@@ -5,6 +5,9 @@ public class Coche extends Vehiculo {
 
     public Coche(String marca, String modelo, int velocidadMaxima, int numPuertas) {
         super (marca, modelo, velocidadMaxima);
+        if (numPuertas < 2 || numPuertas > 5) {
+            throw new IllegalArgumentException("El numero de puertas es inválido");
+        }
         this.numPuertas = numPuertas;
     }
     public int getNumPuertas() {

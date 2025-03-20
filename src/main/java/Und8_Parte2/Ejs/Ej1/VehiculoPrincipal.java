@@ -27,19 +27,13 @@ public class VehiculoPrincipal {
                 System.out.println(((Coche) vehiculo).getMarca()+" "+vehiculo.getVelocidadActual());
 
             }
-            if (vehiculo instanceof Moto) {
-                System.out.println("Motos: ");
                 System.out.println("Marca: "+vehiculo.getMarca()+" | Modelo: "+vehiculo.getModelo()+" | Velocidad: "+vehiculo.getVelocidadActual());
-                System.out.println();
-            }
-            if (vehiculo instanceof Camion) {
-                System.out.println("Camiones: ");
-                System.out.println("Marca: "+vehiculo.getMarca()+" | Modelo: "+vehiculo.getModelo()+" | Velocidad: "+vehiculo.getVelocidadActual());
-                System.out.println();
+
             }
         }
 
 
 
     }
-}
+
+

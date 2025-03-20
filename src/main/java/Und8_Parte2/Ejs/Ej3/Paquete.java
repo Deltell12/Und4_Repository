@@ -9,13 +9,13 @@ public class Paquete {
     protected LocalDate fechaEntrega;
     protected EstadoEnvio estado;
 
-    public Paquete(int id, double peso, LocalDate fechaEntrega) {
+    public Paquete(double peso) {
         this.id = contadorId++;
         if (peso<0 || peso>20) {
             throw new IllegalArgumentException("Error, el peso es invalido.");
         }
         this.peso = peso;
-        this.fechaEntrega = fechaEntrega;
+        this.fechaEntrega = calcularFechaEntrega(peso);
         if (estaRetrasado()){
             throw new IllegalArgumentException("El paquete esta retrasado.");
         }
@@ -24,10 +24,6 @@ public class Paquete {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public double getPeso() {
@@ -54,19 +50,19 @@ public class Paquete {
         this.estado = estado;
     }
 
-    public LocalDate calcularFechaEntrega() {
+    public LocalDate calcularFechaEntrega(double peso) {
         LocalDate hoy = LocalDate.now();
         if (peso >= 1 || peso <=5) {
             fechaEntrega = hoy.plusDays(1);
         }
         if (peso > 5 || peso<=10) {
-            fechaEntrega = hoy.plusMonths(2);
+            fechaEntrega = hoy.plusDays(2);
         }
         if (peso > 10 || peso<=15) {
-            fechaEntrega = hoy.plusWeeks(4);
+            fechaEntrega = hoy.plusDays(4);
         }
         if (peso > 15 || peso<=20) {
-            fechaEntrega = hoy.plusYears(5);
+            fechaEntrega = hoy.plusDays(5);
         }
         return fechaEntrega;
     }
@@ -92,4 +88,7 @@ public class Paquete {
         return estado;
     }
 
+    public String toString() {
+        return "["+getId()+"]";
+    }
 }

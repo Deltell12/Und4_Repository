@@ -5,6 +5,9 @@ public class Moto extends Vehiculo {
 
     public Moto (String marca, String modelo, int velocidadMaxima, int cilindrada) {
         super (marca, modelo, velocidadMaxima);
+        if (cilindrada < 0 || cilindrada > 2500) {
+            throw new IllegalArgumentException("La cilindrada no es valida");
+        }
         this.cilindrada = cilindrada;
     }
     public int getCilindrada() {

@@ -9,6 +9,9 @@ public class Avion extends Vehiculo {
         if(altitudMaxima > 12000) {
             throw new IllegalArgumentException("Error, la altitud maxima no puede exceder los 12000 metros");
         }
+        else if (altitudMaxima > 0) {
+            throw new IllegalArgumentException("La altitud maxima no puede ser negativa");
+        }
         this.altitudMaxima = altitudMaxima;
 
     }
