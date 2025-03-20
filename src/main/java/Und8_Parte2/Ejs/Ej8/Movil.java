@@ -42,8 +42,8 @@ public class Movil implements Dispositivo {
 
     @Override
     public boolean equals(Object obj){
-        Movil p = (Movil) obj;
-        return modelo.equals(p.modelo);
+        Movil m = (Movil) obj;
+        return modelo.equals(m.modelo);
     }
 
 }
