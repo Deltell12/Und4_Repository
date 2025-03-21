@@ -1,16 +1,16 @@
 package Und8_Parte2.Ejs.Ej8;
 
-public abstract class Empleado{
+public abstract class Empleado {
     protected String nombre;
     protected double salarioBase;
     protected Dispositivo dispositivoElectronico;
 
-    public Empleado(String nombre, double salarioBase, Dispositivo dispositivoElectronico) {
+    public Empleado(String nombre, double salarioBase, Dispositivo dispositivoElectronico) throws Exception{
         if (nombre == null || nombre.isEmpty()) {
             throw new IllegalArgumentException("Error, el nombre del empleado no es correcto");
         }
         this.nombre = nombre;
-        if (salarioBase<0) {
+        if (salarioBase<=0) {
             throw new IllegalArgumentException("Error, el salario del empleado no es correcto");
         }
         this.salarioBase = salarioBase;
@@ -48,6 +48,6 @@ public abstract class Empleado{
     }
 
     public String toString() {
-        return "Empleado "+nombre+"/ Salario: "+salarioBase+" euros";
+        return "Empleado: "+nombre+" / Salario: "+calcularSalario()+" euros";
     }
 }

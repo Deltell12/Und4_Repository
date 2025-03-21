@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Programador extends Empleado implements TrabajadorRemoto {
     private EstadoVPN estadoVPN;
 
-    public Programador(String nombre, double salarioBase, Dispositivo dispositivoElectronico, EstadoVPN estadoVPN) {
+    public Programador(String nombre, double salarioBase, Dispositivo dispositivoElectronico, EstadoVPN estadoVPN) throws Exception {
         super(nombre, salarioBase, dispositivoElectronico);
         this.estadoVPN = estadoVPN;
     }
@@ -16,9 +16,9 @@ public class Programador extends Empleado implements TrabajadorRemoto {
         return salarioBase+bonoAdicional;
     }
 
-    public String toString() {
+    public String toString(){
         String valorCategoria = "Programador";
-        return " / Categoría: " + valorCategoria;
+        return super.toString()+" / Categoría: "+valorCategoria;
     }
 
     @Override
