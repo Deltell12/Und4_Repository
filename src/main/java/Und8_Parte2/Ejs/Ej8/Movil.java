@@ -8,7 +8,7 @@ public class Movil implements Dispositivo {
         if (modelo.isEmpty() || modelo == null) {
             throw new IllegalArgumentException("Error, el modelo del movil no es correcto");
         }
-        this.modelo = modelo;
+        this.modelo = modelo.trim();
         this.estado = estado;
     }
 
@@ -49,4 +49,7 @@ public class Movil implements Dispositivo {
         return modelo.equals(m.modelo);
     }
 
+    public String toString() {
+        return "Movil "+modelo;
+    }
 }

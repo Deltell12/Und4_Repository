@@ -7,13 +7,13 @@ public class Empresa {
     private String nombre;
     private ArrayList<Empleado> empleados;
 
-    public Empresa(String nombre, ArrayList<Empleado> empleados) throws Exception {
+    public Empresa(String nombre) throws Exception {
         if (nombre == null || nombre.isEmpty()) {
             throw new IllegalArgumentException("Error, el nombre no es válido");
         }
 
         this.nombre = nombre;
-        this.empleados = empleados;
+        this.empleados = new ArrayList<>();
     }
 
     public String getNombre() {

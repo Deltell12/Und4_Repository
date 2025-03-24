@@ -12,7 +12,7 @@ public class ProbarEmpresa {
             Dispositivo dispositivo1 = new Portatil("HP", Estado.apagado);
             Dispositivo dispositivo2 = new Portatil("HP", Estado.encendido);
             Dispositivo dispositivo3 = new Portatil("Mac", Estado.apagado);
-            Empleado empleado1 = new JefeEquipo("Paco", 1600.70, dispositivo1, EstadoVPN.conectado);
+            Empleado empleado1 = new JefeEquipo("Paco", 1600, dispositivo1, EstadoVPN.conectado);
             Empleado empleado2 = new Administrativo("Pedro", 1200, dispositivo2);
             Empleado empleado3 = new Programador("Maria", 1800, dispositivo1, EstadoVPN.conectado);
             empleados.add(empleado1);
@@ -22,14 +22,16 @@ public class ProbarEmpresa {
             System.out.println(dispositivo1.equals(dispositivo2));
             System.out.println(dispositivo1.equals(dispositivo3));
 
+            System.out.println(empleado1.mostrarInformacion());
+
             int cont = 1;
             empleados.sort(new ComparaSalario());
 
             System.out.println("RANKING POR SALARIO: ");
             System.out.println("=========================================================================");
             for (Empleado emp : empleados) {
-                System.out.println(cont + " -> " + emp.toString());
-                cont++;
+                    System.out.println(cont + " -> " + emp.toString());
+                    cont++;
             }
         }catch (Exception e) {
             System.out.println(e.getMessage());

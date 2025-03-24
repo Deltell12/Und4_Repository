@@ -8,7 +8,7 @@ public class Portatil implements Dispositivo {
         if (modelo.isEmpty() || modelo == null) {
             throw new IllegalArgumentException("Error, el modelo del portatil no es correcto");
         }
-        this.modelo = modelo;
+        this.modelo = modelo.trim();
         this.estado = estado;
     }
 
@@ -47,5 +47,10 @@ public class Portatil implements Dispositivo {
     public boolean equals(Object obj){
         Portatil p = (Portatil) obj;
         return modelo.equals(p.modelo);
+    }
+
+    @Override
+    public String toString() {
+        return "Portatil "+modelo;
     }
 }

@@ -1,8 +1,11 @@
 package Und8_Parte2.Ejs.Ej8;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 public class JefeEquipo extends Empleado implements TrabajadorRemoto {
+    DecimalFormat df = new DecimalFormat("#.##");
+
     private EstadoVPN estadoVPN;
 
     public JefeEquipo(String nombre, double salarioBase, Dispositivo dispositivoElectronico, EstadoVPN trabajoRemoto) throws Exception {
