@@ -5,6 +5,9 @@ public class Movil implements Dispositivo {
     private Estado estado;
 
     public Movil(String modelo, Estado estado) {
+        if (modelo.isEmpty() || modelo == null) {
+            throw new IllegalArgumentException("Error, el modelo del movil no es correcto");
+        }
         this.modelo = modelo;
         this.estado = estado;
     }
