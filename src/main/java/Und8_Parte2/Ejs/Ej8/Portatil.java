@@ -17,6 +17,9 @@ public class Portatil implements Dispositivo {
     }
 
     public void setModelo(String modelo) {
+        if (modelo.isEmpty() || modelo == null) {
+            throw new IllegalArgumentException("Error, el modelo del movil no es correcto");
+        }
         this.modelo = modelo;
     }
 
@@ -28,19 +31,37 @@ public class Portatil implements Dispositivo {
         this.estado = estado;
     }
 
+
     @Override
     public void encender() {
-
+        if (estado==Estado.apagado){
+            System.out.println("Encendiendo...");
+            estado = Estado.encendido;
+        }
+        else {
+            System.out.println("Error, el portatil ya esta encendido");
+        }
     }
 
     @Override
     public void apagar() {
-
+        if (estado == Estado.encendido) {
+            System.out.println("Apagando...");
+            estado = Estado.apagado;
+        }
+        else {
+            System.out.println("Error, el portatil ya esta apagado");
+        }
     }
 
     @Override
-    public void estadoDispositivo() {
-
+    public Estado estadoDispositivo() {
+        if (estado == Estado.encendido) {
+            return estado;
+        }
+        else {
+            return estado;
+        }
     }
 
     @Override

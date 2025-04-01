@@ -1,7 +1,5 @@
 package Und8_Parte2.Ejs.Ej8;
 
-import java.text.DecimalFormat;
-
 public abstract class Empleado extends Object{
     protected String nombre;
     protected double salarioBase;
@@ -24,7 +22,10 @@ public abstract class Empleado extends Object{
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (nombre == null || nombre.isEmpty() || !validarNombre(nombre.trim())) {
+            throw new IllegalArgumentException("Error, el nombre del empleado no es correcto");
+        }
+        this.nombre = nombre.trim();
     }
 
     public double getSalarioBase() {
@@ -32,6 +33,9 @@ public abstract class Empleado extends Object{
     }
 
     public void setSalarioBase(double salarioBase) {
+        if (salarioBase<=0) {
+            throw new IllegalArgumentException("Error, el salario del empleado no es correcto");
+        }
         this.salarioBase = salarioBase;
     }
 
@@ -59,6 +63,6 @@ public abstract class Empleado extends Object{
     }
 
     public String toString() {
-        return "Empleado: "+nombre.trim()+" / Salario: "+calcularSalario()+" euros";
+        return "Empleado: "+nombre.trim()+" / Salario: "+salarioBase+" euros";
     }
 }

@@ -1,6 +1,5 @@
 package Und8_Parte2.Ejs.Ej8;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Empresa {
@@ -21,6 +20,11 @@ public class Empresa {
     }
 
     public void setNombre(String nombre) {
+
+        if (nombre == null || nombre.isEmpty()) {
+            throw new IllegalArgumentException("Error, el nombre no es válido");
+        }
+
         this.nombre = nombre;
     }
 
@@ -30,6 +34,10 @@ public class Empresa {
 
     public void setEmpleados(ArrayList<Empleado> empleados) {
         this.empleados = empleados;
+    }
+
+    public void aniadirEmpleado(Empleado empleado) {
+        empleados.add(empleado);
     }
 
 }

@@ -1,11 +1,8 @@
 package Und8_Parte2.Ejs.Ej8;
 
-import java.io.Serializable;
 import java.text.DecimalFormat;
 
 public class JefeEquipo extends Empleado implements TrabajadorRemoto {
-    DecimalFormat df = new DecimalFormat("#.##");
-
     private EstadoVPN estadoVPN;
 
     public JefeEquipo(String nombre, double salarioBase, Dispositivo dispositivoElectronico, EstadoVPN trabajoRemoto) throws Exception {
@@ -24,18 +21,44 @@ public class JefeEquipo extends Empleado implements TrabajadorRemoto {
         return super.toString()+" / Categoría: "+valorCategoria;
     }
 
+    public EstadoVPN getEstadoVPN() {
+        return estadoVPN;
+    }
+
+    public void setEstadoVPN(EstadoVPN estadoVPN) {
+        this.estadoVPN = estadoVPN;
+    }
+
+
     @Override
     public void conectarVPN() {
-
+        if (estadoVPN == EstadoVPN.desconectado){
+            System.out.println("Conectando VPN...");
+            estadoVPN = EstadoVPN.conectado;
+        }
+        else {
+            throw new IllegalArgumentException("La VPN del Jefe de Equipo ya esta conectada");
+        }
     }
 
     @Override
     public void desconectarVPN() {
-
+        if (estadoVPN == EstadoVPN.conectado){
+            System.out.println("Desconectando VPN...");
+            estadoVPN = EstadoVPN.desconectado;
+        }
+        else {
+            throw new IllegalArgumentException("La VPN del Jefe de Equipo ya esta desconectada");
+        }
     }
 
     @Override
-    public void estadoConexionVPN() {
-
+    public EstadoVPN estadoConexionVPN() {
+        if (estadoVPN == EstadoVPN.desconectado){
+            return estadoVPN;
+        }
+        else {
+            return estadoVPN;
+        }
     }
 }

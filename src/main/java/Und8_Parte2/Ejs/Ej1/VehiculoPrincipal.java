@@ -23,7 +23,6 @@ public class VehiculoPrincipal {
 
         for (Vehiculo vehiculo : vehiculos) {
             if (vehiculo instanceof Coche) {
-                ((Coche) vehiculo).getNumPuertas();
                 System.out.println(((Coche) vehiculo).getMarca()+" "+vehiculo.getVelocidadActual());
 
             }
