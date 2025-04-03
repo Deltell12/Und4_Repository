@@ -1,4 +1,4 @@
-package Ejs_Und11.Ej2;
+package Ejs_Und11.FicherosTextos.Ej2;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class FicherosTexto_Ej2 {
-    private static final String ruta = Paths.get("src", "main", "java", "Ejs_Und11", "Ej2").toString();
+    private static final String ruta = Paths.get("src", "main", "java", "Ejs_Und11", "FicherosTextos", "Ej2").toString();
     private static final String archivo = "datos.txt";
 
     public static void main(String[] args) {

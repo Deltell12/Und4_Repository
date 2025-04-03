@@ -1,11 +1,11 @@
-package Ejs_Und11.Ej3;
+package Ejs_Und11.FicherosTextos.Ej3;
 
 import java.io.*;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class FicherosTexto_Ej3_V2 {
-    private static final String ruta = Paths.get("src", "main", "java", "Ejs_Und11", "Ej3").toString();
+    private static final String ruta = Paths.get("src", "main", "java", "Ejs_Und11", "FicherosTextos", "Ej3").toString();
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

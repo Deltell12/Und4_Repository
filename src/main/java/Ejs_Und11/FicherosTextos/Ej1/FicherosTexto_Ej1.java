@@ -1,11 +1,11 @@
-package Ejs_Und11.Ej1;
+package Ejs_Und11.FicherosTextos.Ej1;
 
 import java.io.*;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class FicherosTexto_Ej1 {
-    public static final String rutaArchivo = Paths.get("src", "main", "java", "Ejs_Und11", "Ej1").toString();
+    public static final String rutaArchivo = Paths.get("src", "main", "java", "Ejs_Und11", "FicherosTextos", "Ej1").toString();
     public static final String defecto = "prueba.txt";
 
     public static void main(String[] args) throws FileNotFoundException {
