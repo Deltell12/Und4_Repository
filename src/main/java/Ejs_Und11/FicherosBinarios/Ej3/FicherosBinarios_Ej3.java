@@ -28,7 +28,7 @@ public class FicherosBinarios_Ej3 {
         try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(ruta))){
             while(true) {
                 int num = ois.readInt();
-                System.out.print(num);
+                System.out.print(num+" ");
             }
         }catch (EOFException e){
             System.out.println("\nFin del fichero");

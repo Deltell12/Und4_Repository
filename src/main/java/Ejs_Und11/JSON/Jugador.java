@@ -51,8 +51,11 @@ public class Jugador {
         if (puntos < 0) {
             throw new IllegalArgumentException("Los puntos del jugador no pueden ser negativo");
         }
-
         this.puntos = puntos;
+    }
+
+    public String toString() {
+        return "{ Nombre: "+nombre + ", Nivel: " + nivel + ", Puntos: " + puntos + " }";
     }
 
 }

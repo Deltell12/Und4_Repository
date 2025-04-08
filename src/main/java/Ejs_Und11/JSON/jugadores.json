@@ -1,0 +1,9 @@
+[ {
+  "nombre" : "Manuel",
+  "nivel" : 10,
+  "puntos" : 12
+}, {
+  "nombre" : "Carlos",
+  "nivel" : 2,
+  "puntos" : 156
+} ]

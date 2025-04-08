@@ -17,9 +17,6 @@ public class FicherosBinario_Ej8 {
         Scanner sc = new Scanner(System.in);
         String texto = "";
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ruta))) {
-            do{
-                System.out.print("Ingresa : ");
-            }
         }catch (IOException e){
 
         }
