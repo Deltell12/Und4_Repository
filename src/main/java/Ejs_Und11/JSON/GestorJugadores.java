@@ -16,16 +16,17 @@ import java.util.Scanner;
 public class GestorJugadores {
     private static Jugador [] arrayJugadoresExistentes;
     private static List<Jugador> listaJugadores = new ArrayList<>();
-    static ObjectMapper mapper = new ObjectMapper();
-
+    static ObjectMapper objMapper = new ObjectMapper();
     private static final String Fichero = "jugadores.json";
     private static final String ruta = Paths.get("src", "main", "java", "Ejs_Und11", "JSON").toString();
 
-    static File fichero = new File(ruta+File.separator+Fichero);
+    static File fichero = new File(ruta,Fichero);
 
     public static void main(String[] args) throws Exception {
         Jugador j1 = new Jugador("Steve", 15, 15000);
         Jugador j2 = new Jugador("Alex", 10, 12420);
+        objMapper.enable(SerializationFeature.INDENT_OUTPUT);
+        leerJugadores();
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Gestor de Jugadores - CRUD");
@@ -62,6 +63,10 @@ public class GestorJugadores {
                         mostrarjugador(nom);
                         System.out.println();
                         break;
+                    case 3:
+                        for (Jugador j : listaJugadores) {
+                            System.out.println(j);
+                        }
 
 
                 }
@@ -79,9 +84,11 @@ public class GestorJugadores {
 
     public static void escribirJSON() throws Exception {
         try {
+            if (fichero.length()>0){
 
-                mapper.enable(SerializationFeature.INDENT_OUTPUT);
-                mapper.writeValue(fichero, listaJugadores);
+            }
+                objMapper.enable(SerializationFeature.INDENT_OUTPUT);
+                objMapper.writeValue(fichero, listaJugadores);
 
         }catch (IOException e){
             System.out.println("Error al escribir el JSON");
@@ -89,11 +96,18 @@ public class GestorJugadores {
     }
 
     public static List<Jugador> leerJugadores() throws Exception {
-        mapper.enable(SerializationFeature.INDENT_OUTPUT);
         try {
-            Jugador lista = mapper.readValue(fichero, Jugador.class);
-            listaJugadores.add(lista);
+            if (fichero.exists() && fichero.length() > 0) {
+                for (Jugador jugador : listaJugadores) {
+                    System.out.println(jugador);
+                }
+                listaJugadores = objMapper.readValue(fichero, new TypeReference<>() {});
+
+            } else {
+                listaJugadores = new ArrayList<>();
+            }
         }catch (IOException e){
+
             System.out.println("Error al leer el JSON");;
         }
         return listaJugadores;

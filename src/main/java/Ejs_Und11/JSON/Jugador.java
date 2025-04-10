@@ -19,6 +19,7 @@ public class Jugador {
         }
         this.puntos = puntos;
     }
+    public Jugador(){}
 
 
     public String getNombre() {
