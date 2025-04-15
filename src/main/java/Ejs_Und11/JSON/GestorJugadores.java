@@ -53,6 +53,8 @@ public class GestorJugadores {
                         int nivel = sc.nextInt();
                         System.out.print("Introduce los puntos del jugador: ");
                         int puntos = sc.nextInt();
+                        System.out.println("===============================");
+                        System.out.println("Personaje Guardado");
                         guardarJugador(new Jugador(nombre, nivel, puntos));
                         System.out.println();
                         break;
@@ -64,14 +66,28 @@ public class GestorJugadores {
                         System.out.println();
                         break;
                     case 3:
-                        for (Jugador j : listaJugadores) {
-                            System.out.println(j);
-                        }
+                        mostrarjugadores();
+                        System.out.println();
+                        break;
+
+                    case 4:
+                        System.out.println("Introduce el nombre del jugador al que quieres cambiarle los puntos: ");
+                        String nombreJugador = sc.next();
+                        System.out.println("Introduce los nuevos puntos del jugador: ");
+                        int puntosJugador = sc.nextInt();
+                        actualizarPuntos(nombreJugador, puntosJugador);
+                        break;
+
+                    case 5:
+                        System.out.println("Introduce el nombre del jugador que quieres eliminar: ");
+                        String nombreJugadorEliminar = sc.next();
+                        eliminarJugador(nombreJugadorEliminar);
 
 
                 }
             }
             while (opcion != 6);
+            System.out.println("Saliendo...");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -125,8 +141,45 @@ public class GestorJugadores {
     }
 
     public static void mostrarjugador(String nombre) throws Exception {
-                if (!buscarJugador(nombre)) {
-                    throw new Exception("El jugador no existe");
-                }
+        if (!buscarJugador(nombre)) {
+            System.out.println("El jugador no existe");
+        }
+    }
+
+    public static void mostrarjugadores() throws Exception {
+
+        if (listaJugadores.isEmpty()) {
+            System.out.println("No hay jugadores");
+        }
+        else {
+            System.out.println("Jugadores guardados: ");
+            System.out.println("===============================");
+            for (Jugador j : listaJugadores) {
+                System.out.println(j);
+            }
+        }
+    }
+
+    public static void actualizarPuntos(String nombre, int nuevosPuntos) throws Exception {
+        for (Jugador j : listaJugadores) {
+            if (j.getNombre().equals(nombre)) {
+                j.setPuntos(nuevosPuntos);
+            }
+            else {
+                System.out.println("El jugador no existe");
+            }
+        }
+        escribirJSON();
+    }
+
+    public static void eliminarJugador(String nombre) throws Exception {
+        for (Jugador j : listaJugadores) {
+            if (j.getNombre().equals(nombre)) {
+                listaJugadores.remove(j);
+            }
+            else {
+                System.out.println("El jugador no existe");
+            }
+        }
     }
 }

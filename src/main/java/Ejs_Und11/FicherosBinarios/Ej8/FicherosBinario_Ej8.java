@@ -28,7 +28,7 @@ public class FicherosBinario_Ej8 {
         try (ObjectInputStream ois = new ObjectInputStream((new FileInputStream(ruta+File.separator+nombre)))){
             while(true) {
                 texto = (String) ois.readObject();
-                System.out.print(texto+" ");
+                System.out.print(texto.trim()+" ");
             }
         } catch (EOFException e) {
             if (texto.trim().isEmpty()) {
